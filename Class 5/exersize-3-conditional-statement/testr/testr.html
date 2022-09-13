@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+</head>
+<body>
+    <script>
+let time = 0;
+
+
+let [milliseconds,seconds,minutes,hours] = [0,0,0,0];
+
+for(let i = 0; i < 100000000; i++) {
+   milliseconds = milliseconds + 1;
+
+
+if(milliseconds == 1000){
+    milliseconds = 0;
+    seconds = seconds + 1;
+    console.log("seconds= " + seconds);
+
+    if(seconds == 60){
+        seconds = 0;
+        minutes = minutes + 1;
+        console.log("minutes = " + minutes);
+
+        if(minutes == 60){
+            minutes = 0;
+            hours = hours + 1;
+        }
+    }
+}
+}
+
+let clock;
+if (time < 10) {
+    clock = "Good morning";
+  } else if (time < 20) {
+    clock = "Good day";
+  } else {
+    clock = "Good evening";
+  }
+
+
+    </script>
+</body>
+</html>

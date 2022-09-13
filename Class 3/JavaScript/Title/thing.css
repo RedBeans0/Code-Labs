@@ -1,0 +1,19 @@
+.top {
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+    padding: 20px 0px;
+  }
+  
+  .start {
+    padding: 20px 0px;
+  }
+  
+  .bg {
+    width: 70vh;
+    margin: 0 auto;
+    background: #000;
+    height: 70vh;
+    border-radius: 10px;
+    box-shadow: 0 0 50px #777;
+  }

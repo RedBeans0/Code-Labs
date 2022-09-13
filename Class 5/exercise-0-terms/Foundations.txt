@@ -1,0 +1,7 @@
+Data types are what tells the computer which type of value the variable contains. and if its methmatical, relational, or logical
+
+operators is a character that represents either a math or logic related process or action.
+
+conditional statements are various programming languages that help tell the computer what to do.
+
+Loops is a code that allows the user to repeadedly use a lone of code for more than once.

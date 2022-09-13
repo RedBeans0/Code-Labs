@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<button>
+  Rainbows!
+  
+</button>
+<style> 
+
+div {
+  width: 100px;
+  height: 100px;
+  background-color: red;
+  animation-name: backgrounds;
+  animation-duration: 10s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes backgrounds {
+  0%   {background-color:red; left:0px; top:0px;}
+  14%  {background-color:orange; left:200px; top:0px;}
+  29%  {background-color:yellow; left:200px; top:200px;}
+  43%  {background-color:green; left:0px; top:200px;}
+  57% {background-color:blue; left:0px; top:0px;}
+  71% {background-color:indigo; left:0px; top:0px;}
+  85% {background-color:violet; left:0px; top:0px;}
+  100% {background-color:red; left:0px; top:0px;}
+}
+
+      /* (A) RAINBOW COLOR SEQUENCE */
+      @keyframes rainbow {
+        0% { color: #fc0303 }
+        17% { color: #45f52a }
+        34% { color: #2a7bf5 }
+        51% { color: #2af5e4 }
+        68% { color: #c92af5 }
+        85% { color: #f5dd2a }
+        100% { color: #66655d }
+      }
+
+      /* (B) ATTACH RAINBOW EFFECT */
+      .rainbow {
+        animation-name: rainbow;
+        animation-duration: 3s;
+        animation-iteration-count: infinite;
+      }
+
+</style>
+    <h1 class="rainbow" >Welcome to my home</h1>
+    <p class="rainbow">as you can see, it is very colorful</p>
+    <p class="rainbow">Some random contents</p>
+    <p class="rainbow">Some random contents</p>
+</head>
+<body>
+  <div class="background"></div>
+
+<h1 class="rainbow">Wooo</h1>
+
+<div></div>
+
+<p class="we"><b>Note:</b> I am not responsible for any seizures.</p>
+
+<ul>
+  <li><a href="./Beans.html">Beans</a></li>
+  <li><a href="./park.html">Park</a></li>
+</ul>
+</body>
+</html>
+
+
