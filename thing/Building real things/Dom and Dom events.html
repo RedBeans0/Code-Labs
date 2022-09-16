@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+</head>
+<body>
+
+
+    <div class="jumbotron text-center">
+<button class="btn btn-danger" onclick="goCoocoo()">
+wooo
+
+</button>
+</div>
+
+    <div class="jumbotron text-center">
+
+        <button class="btn btn-danger coffee-btn">
+        COFFEEEEE
+     </button>
+        <button class="btn btn-danger coffee-btn">
+        COFFEEEEE
+     </button>
+     <button class="btn btn-danger coffee-btn">
+        COFFEEEEE
+     </button>
+     <button class="btn btn-danger coffee-btn">
+        COFFEEEEE
+     </button>
+ </div>
+
+ <div class="jumbotron text-center">
+    <button class="btn btn-primary lala-btn">
+    shut
+    
+    </button>
+    </div>
+
+<script>
+
+
+/// 1 grab element from dom
+//2 attach event listenens
+
+
+function goCoocoo() {
+    document.body.style.backgroundColor = "#C00C00";
+}
+
+// eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
+
+const coffeeButton = document.querySelectorAll('.coffee-btn');
+//coffeeButton.onClick = function() {
+    //document.body.style.backgroundColor = '#C0FFEE';
+//}
+//coffeeButton.onmouseenter = goCoocoo;
+
+function getcoffee() {
+    document.body.style.backgroundColor = '#C0FFEE';
+}
+coffeeButton.forEach(function(button) {
+    button.onClick = goCoocoo;
+});
+
+
+// aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+const lalaButton = document.querySelector('.lala-btn');
+
+function shut() {
+    document.body.style.backgroundColor = '#1A1A1A';
+}
+
+lalaButton.addEventListener('click', shut);
+lalaButton.addEventListener('mouseenter', goCoocoo);
+const buttons = document.querySelectorAll('button');
+button.forEach(button => button.addEventListener ('mouseleave', shut));
+</script>
+
+</body>
+</html>

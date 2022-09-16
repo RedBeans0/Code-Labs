@@ -1,0 +1,2 @@
+- DOM is a documented object Model that helps you modify a document
+- event listeners are what the computer keeps track of from the user that inputs imformation.

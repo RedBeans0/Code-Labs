@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        body, .jumbotron { padding: 30px;}
+        .text-giant {font-size: 40px;}
+    </style>
+</head>
+<body>
+    <div class="jumbotron">
+<h2>how much is gas?</h2>
+
+<form>
+
+<div class="form-group">
+    <label for="price">Price</label>
+    <input type="text" class="form-control" name="price" valuse="20">
+</div>
+
+<div class="form-group">
+    <label for="quantity">Per Gallon
+<span class="label label-primary quantity-label">1</span>
+
+    </label> 
+    <input type="range" class="form-control" name="quantity"
+    value="1" min="1" max="10" step="0.5">
+    </div>
+
+</form>
+
+<div class="text-right text-giant"></div>
+    </div> 
+<script>
+//grab what we need
+const priceInput = document.querySelector('[name=price]');
+const quantityInput = document.querySelector('[name=quantity]');
+const total = document.querySelector('.total');
+const quantityLabel = document.querySelector('.quantity-label');
+
+//create functions
+function calculateGas() {
+    const price = priceInput.value;
+    const quantity = quantityInput.value;
+    const cost = price * quantity;
+    console.log(cost);
+    total.innerText = '$' + cost.toFixed(2);
+}
+
+function updateQuantity() {
+    const quantity = quantityInput.value;
+    quantityLabel.innerText = quantity;
+}
+
+//first run
+calculateGas();
+
+
+// add listeners
+priceInput.addEventListener('input', calculateGas);
+quantityInput.addEventListener('input', calculateGas);
+
+</script>
+
+</body>
+</html>

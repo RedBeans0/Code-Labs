@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+
+<head>
+
+</head>
+<body>
+   <div class="jumbotron text-center"> 
+<button type="'button" class="'btn btn-danger"
+onclick="hello('this is a test')">
+    my button
+</button>
+
+<button type="'button" class="'btn btn-danger"
+onclick="hello('this is also a test')">
+   also my button
+</button>
+   </div>
+
+   <script>
+function hello(message = 'goodbye', whisper = false) {
+    if(whisper) {
+        console.log("%c${message}", 'font-size:5px')
+    } else {
+
+    }
+    console.log(message);
+}
+
+function square(a) {
+    return a * a;
+}
+
+hello("hello");
+
+
+hello("hello", true);
+
+hello();
+
+
+   </script>
+    
+</body>
+</html>

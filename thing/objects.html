@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+
+
+<head>
+    
+</head>
+
+<body>
+    
+<script>
+const first = 'im first';
+const second = String('im first');
+//console.log('im first'.toUpperCase());
+//console.log(String('im first').toUpperCase());
+
+//console.log(first === second);
+
+console.group('Primitives vs Objects');
+console.log(first === second);
+console.log(
+    typeof first, 
+    typeof String('im first'),
+    typeof new String()
+);
+console.groupEnd();
+
+//strings
+const setence = 'im a setence';
+console.group('string')
+console.log(first.toUpperCase());
+console.log(second.toLowerCase());
+console.log(setence.startsWith("im"));
+console.log('WOOOO'.repeat(20));
+console.log('TETRISSSSS         '.trim());
+console.groupEnd();
+
+
+// numbers n math
+
+console.group('maths');
+console.log(1..toString());
+console.log((1).toString);
+console.log(Number.isInteger(5));
+console.log(Number.isInteger(5.43));
+console.log((1.5643244).toFixed(2));
+console.log(
+    Math.random().toFixed(2),
+    Math.ceil(1.56),
+    Math.floor(6.3)
+);
+console.groupEnd();
+
+const arr = ['chris', 'clark', 'cora']
+console.group('arrays');
+console.log(arr.length);
+console.log(arr.join('-'));
+console.log(arr.push('cas'), arr);
+console.log(arr.pop('cas'), arr);
+
+arr.forEach(function(user) {
+    console.log(user);
+});
+
+arr.forEach((user) => console.log(user));
+
+console.groupEnd()
+</script>
+
+</body>
+
+</html>

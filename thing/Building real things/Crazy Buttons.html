@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+  
+    <title>Document</title>
+<style>
+    body, .jumbotron { padding: 30px;}
+    .text-giant {font-size: 40px;}
+    .btn-crazy { 
+        position: absolute;
+        top: 30px;
+        left: 35%;
+        width: 30%;
+        transition: 0.5s ease all;
+        text-align: center;
+    }
+    </style>
+</head>
+<body>
+
+    <button type="button" class="btn-crazy btn btn-lg btn-primary">
+    Click on me!
+</button> 
+
+<button type="button" class="btn-crazy btn btn-lg btn-danger">
+    Click on me!
+</button> 
+
+<button type="button" class="btn-crazy btn btn-lg btn-success">
+    Click on me!
+</button> 
+
+<script>
+
+// grab stuff
+const crazyButtons = document.querySelectorAll('.btn-crazy');
+//define functions
+function goCrazy(event) {
+    console.log(e); 
+    const button = e.target;
+// get random numver 4 left
+const offsetLeft = Math.random() * (window.innerWidth - button.clientWidth);
+const offsetTop = Math.random() * (window.innerHeight - button.clientHeight);
+
+console.log (offsetLeft, offsetTop);
+//get random 4 right
+
+//apply them here
+crazyButtons.style.top = offsetTop + 'px';
+crazyButtons.style.left = offsetLeft + 'px';
+}
+//add listeners
+crazyButtons.forEach(button => button.addEventsListener('mouseenter', goCrazy));
+</script>
+
+</body>
+
+</html>
