@@ -1,0 +1,41 @@
+<html>
+<head>
+<title>Live Analog Clock using CSS and jQuery</title>
+<link href="style.css" rel="stylesheet">
+<style>
+    body {
+  background-size: 40px 40px;
+  background-image:
+    linear-gradient(to right, grey 1px, transparent 1px),
+    linear-gradient(to bottom, grey 1px, transparent 1px);
+}
+</style>
+</head>
+
+<body style="background-color: #ffffff;">
+<div class="clock-circle">
+  <div class="clock-face">
+   <div id="hour" class="clock-hour"></div>
+   <div id="minute" class="clock-minute"></div>
+   <div id="second" class="clock-second"></div>
+  </div>
+</div>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script src="script.js"></script>
+<script type="text/javascript">
+jQuery(document).ready(function(){
+
+var analogclock = new analogClock();
+
+window.setInterval(function(){ 
+
+analogclock.run(); 
+
+}, 1000);
+
+});
+</script>
+</body>
+</html>
+
