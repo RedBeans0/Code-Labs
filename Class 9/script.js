@@ -4,6 +4,7 @@ fetch('https://v2.jokeapi.dev/joke/Miscellaneous,Dark,Pun,Spooky,Christmas?black
 
   // 1. access element
 
+  // BE AWARE OF HOW RACIST THE JOKES ARE
 
 let imageElement = document.getElementById('joke');
 
