@@ -1,16 +1,3 @@
-function analogClock(){
-}
-analogClock.prototype.run = function() {
-    var date = new Date();
-    var second = date.getSeconds()* 6;
-    var minute = date.getMinutes()* 6 + second / 60;
-    var hour = ((date.getHours() % 12) / 12) * 360 + 90 + minute / 12;
-    jQuery('#hour').css("transform", "rotate(" + hour + "deg)");
-    jQuery('#minute').css("transform", "rotate(" + minute + "deg)");
-    jQuery('#second').css("transform", "rotate(" + second + "deg)");
-
-};
-
 var Cal = function(divId) {
 
   //Store div id
@@ -28,7 +15,7 @@ var Cal = function(divId) {
   ];
 
   // Months, stating on January
-  this.Months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December' ];
+  this.Months = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12' ];
 
   // Set the current month, year
   var d = new Date();
@@ -37,30 +24,6 @@ var Cal = function(divId) {
   this.currYear = d.getFullYear();
   this.currDay = d.getDate();
 
-};
-
-// Goes to next month
-Cal.prototype.nextMonth = function() {
-  if ( this.currMonth == 11 ) {
-    this.currMonth = 0;
-    this.currYear = this.currYear + 1;
-  }
-  else {
-    this.currMonth = this.currMonth + 1;
-  }
-  this.showcurr();
-};
-
-// Goes to previous month
-Cal.prototype.previousMonth = function() {
-  if ( this.currMonth == 0 ) {
-    this.currMonth = 11;
-    this.currYear = this.currYear - 1;
-  }
-  else {
-    this.currMonth = this.currMonth - 1;
-  }
-  this.showcurr();
 };
 
 // Show current month
@@ -84,7 +47,7 @@ Cal.prototype.showMonth = function(y, m) {
 
   // Write selected month and year
   html += '<thead><tr>';
-  html += '<td colspan="7">' + this.Months[m] + ' ' + y + '</td>';
+  html += '<td colspan="7">' + this.Months[m] + '/' + y + '</td>';
   html += '</tr></thead>';
 
 
@@ -105,13 +68,17 @@ Cal.prototype.showMonth = function(y, m) {
     if ( dow == 0 ) {
       html += '<tr>';
     }
+    //if sunday, mark red
+    if ( dow == 0 ) {
+      html += '<td class="sun">' + i + '</td>';
+    }
     // If not Sunday but first day of the month
     // it will write the last days from the previous month
     else if ( i == 1 ) {
       html += '<tr>';
       var k = lastDayOfLastMonth - firstDayOfMonth+1;
       for(var j=0; j < firstDayOfMonth; j++) {
-        html += '<td class="not-current">' + k + '</td>';
+        html += '<td class="not-current">' + " " + '</td>';
         k++;
       }
     }
@@ -120,21 +87,28 @@ Cal.prototype.showMonth = function(y, m) {
     var chk = new Date();
     var chkY = chk.getFullYear();
     var chkM = chk.getMonth();
+  
     if (chkY == this.currYear && chkM == this.currMonth && i == this.currDay) {
       html += '<td class="today">' + i + '</td>';
     } else {
       html += '<td class="normal">' + i + '</td>';
     }
+
     // If Saturday, closes the row
     if ( dow == 6 ) {
-      html += '</tr>';
+    html += '</tr>';
     }
+
+        // If Saturday, color Blue
+        if ( dow == 6 ) {
+       //   html += '<td class="sat">' + i + '</td>';
+        }
     // If not Saturday, but last day of the selected month
     // it will write the next few days from the next month
     else if ( i == lastDateOfMonth ) {
       var k=1;
       for(dow; dow < 6; dow++) {
-        html += '<td class="not-current">' + k + '</td>';
+        html += '<td class="">' + " " + '</td>';
         k++;
       }
     }
