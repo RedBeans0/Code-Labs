@@ -1,16 +1,16 @@
-var arr1 = [-200, -163, -26, -4, 0, 7, 76];
+var num
 
-var evens = arr1.filter(function(x) {
-  if (x % 2 === 0 || x === 0) {
-    return x;
-    console.log( x + "are even!")
-  } else {
+var a = 15;
 
-console.log( 'not even.')
+var b = 5;
 
+var c = 3;
 
-  }
-})
+if (num == a) {
+  console.log("Woo");
 
-console.log(evens);
-
+} else if (num < a) {
+  console.log("boo");
+} else {
+console.log('what')
+}
