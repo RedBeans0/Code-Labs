@@ -1,0 +1,18 @@
+<h1>DOGS</h1>
+
+<div *ngFor="let dog of dogs">
+  <div>{{dog.name}}</div>
+  <div>{{dog.age}}</div>
+</div>
+
+<div>
+  <!--- event binding-->
+  <input type="text" (input)="onResizeImage($event)">
+</div>
+
+<div>
+  <img src="https://myfirstshiba.com/wp-content/uploads/2021/01/AdobeStock_183962604_reduced.jpg" alt=""
+[width]="width"
+[height]="height"
+/>
+</div>
